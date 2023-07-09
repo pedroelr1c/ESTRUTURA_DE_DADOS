@@ -1,0 +1,59 @@
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	
+	int quant,cont,alunos,ap;
+	float ap_por;
+	char gab[15];
+	
+	printf("INFORMA A QUANTIDADE DE PERGUNTAS DA PROVA\n>>> ");
+	scanf("%d",&quant);
+	
+	
+	float *nota=(float*)calloc(quant,sizeof(float));
+	char *resp=(char*)malloc(quant*sizeof(char));
+	float *resu=(float*)malloc(quant*sizeof(float));
+	
+	if((resp==NULL) || (resu==NULL) || (nota==NULL)){
+		printf("!!!ERRO DE ALOCAMENTO DE MEMORIA!!!\n");
+		exit(-1);
+	}
+	printf("ALOCAMENTO DE MEMORIA COM SUCESSO!\n");
+
+	
+	printf("INFORME A RESPOSTA DO GABARITO\n>>> ");
+	scanf(" %s",&gab[cont]);
+	system("cls");
+	
+	for(alunos=0;alunos<10;alunos++) {
+		for(cont=0;cont<quant;cont++) {
+			printf("DIGITE A RESPOSTA %i DO ALUNO %i\n>>> ", cont+1,alunos+1);
+			scanf("%s", &resp[cont]);
+			
+			if(resp[cont] == gab[0]) {
+				nota[cont]=nota[cont]+10;
+			}
+			resu[cont] = nota[cont]/quant;
+		}
+		system("cls");
+	}
+	
+	for(cont = 0; cont < 4; cont++) {
+		
+		if(resu[cont]>=6){
+			ap_por++;
+		}
+			
+		printf("ALUNO %i\nNOTA: %.f\n\n", cont + 1, resu[cont]);
+	
+	}
+	
+	printf("APORVADOS: %.2f%%",(ap_por*100)/10);
+	
+	free(nota);
+	free(resu);
+	free(resp);
+
+return 0;
+}
