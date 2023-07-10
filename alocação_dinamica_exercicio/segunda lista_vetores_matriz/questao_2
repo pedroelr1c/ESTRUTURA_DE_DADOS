@@ -60,7 +60,12 @@ int main() {
 		}
 		printf("\n");
 	}
-	
+
+	for (linha = 0; linha < linhas; linha++) {
+    	free(matriz);
+	}
+	free(matriz);
+
 
 return 0;
 }
