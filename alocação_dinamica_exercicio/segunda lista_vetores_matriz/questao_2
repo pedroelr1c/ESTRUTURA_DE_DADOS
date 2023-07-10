@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int linhas, colunas;
+
+    printf("Digite as linhas e as colunas: ");
+    scanf("%i %i", &linhas, &colunas);
+
+    int **matriz = (int**)malloc(linhas * sizeof(float*));
+
+    if (matriz == NULL) {
+        printf("Erro na alocacao \n");
+    } else {
+        printf("Alocacao realizada \n");
+    }
+       
+    for (int c = 0; c < colunas; c++) {
+        matriz[c] = (int*)malloc(colunas * sizeof(int));
+    }
+
+    int linha, coluna;
+
+    for (linha = 0; linha < linhas; linha++) {
+        for (coluna = 0; coluna < colunas; coluna++) {
+        	printf("Digite a linnha %i da coluna %i: ", linha + 1, coluna + 1);
+            scanf("%i", &matriz[linha][coluna]);
+        }
+    }
+
+return 0;
+}
