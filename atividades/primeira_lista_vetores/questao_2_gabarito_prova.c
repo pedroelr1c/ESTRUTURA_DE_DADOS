@@ -31,7 +31,7 @@ int main(void){
 			scanf("%s", &resp[cont]);
 			
 			if(resp[cont] == gab[0]) {
-				nota[cont]=nota[cont]+10;
+				nota[cont]=nota[cont]+1;
 			}
 			resu[cont] = nota[cont]/quant;
 		}
