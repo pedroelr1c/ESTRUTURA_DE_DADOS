@@ -5,15 +5,14 @@ int main(void){
 	
 	int quant,cont,alunos,ap;
 	float ap_por;
-	char gab[15];
 	
-	printf("INFORMA A QUANTIDADE DE PERGUNTAS DA PROVA\n>>> ");
+	printf("INFORMA A QUANTIDADE DE PERGUNTAS DA PROVA\n>>> "); 
 	scanf("%d",&quant);
+	char gab[quant];
 	
-	
-	float *nota=(float*)calloc(quant,sizeof(float));
-	char *resp=(char*)malloc(quant*sizeof(char));
-	float *resu=(float*)malloc(quant*sizeof(float));
+	float *nota=(float*)calloc(quant,sizeof(float)); // criando um vetor para guardar as notas. 
+	char *resp=(char*)malloc(quant*sizeof(char)); // criando um vetor com a resposta. 
+	float *resu=(float*)malloc(quant*sizeof(float)); // criando um vetor com o resultado.
 	
 	if((resp==NULL) || (resu==NULL) || (nota==NULL)){
 		printf("!!!ERRO DE ALOCAMENTO DE MEMORIA!!!\n");
@@ -23,10 +22,10 @@ int main(void){
 
 	
 	printf("INFORME A RESPOSTA DO GABARITO\n>>> ");
-	scanf(" %s",&gab[cont]);
+	scanf(" %s",&gab[cont]); // dando as resposta no vetor gabarito.
 	system("cls");
 	
-	for(alunos=0;alunos<10;alunos++) {
+	for(alunos=0;alunos<10;alunos++) { // laço de repetição para corrigar as resposta dos alunos.
 		for(cont=0;cont<quant;cont++) {
 			printf("DIGITE A RESPOSTA %i DO ALUNO %i\n>>> ", cont+1,alunos+1);
 			scanf("%s", &resp[cont]);
@@ -39,7 +38,7 @@ int main(void){
 		system("cls");
 	}
 	
-	for(cont = 0; cont < 4; cont++) {
+	for(cont = 0; cont < 4; cont++) { // laço que vai imprimir as notas e os status dos alunos.
 		
 		if(resu[cont]>=6){
 			ap_por++;
@@ -49,7 +48,7 @@ int main(void){
 	
 	}
 	
-	printf("APORVADOS: %.2f%%",(ap_por*100)/10);
+	printf("APORVADOS: %.2f%%",(ap_por*100)/10); // porcentagem de alunos aprovados.
 	
 	free(nota);
 	free(resu);
