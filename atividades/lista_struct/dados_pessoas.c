@@ -9,13 +9,13 @@ typedef struct {
 	
 }pessoa;
 
-void imprimirdados(pessoa*registro);
+void imprimirdados(pessoa*registro); // função para imprimir os dados.
 
-void atl_idade(pessoa*registro);
+void atl_idade(pessoa*registro); // funçaõ para alterar a idade das pessoas cadastradas.
 
-void registrardados(pessoa*registo);
+void registrardados(pessoa*registo); // função para registrar os dados.
 
-void maior_menor(pessoa*registro, int quant);
+void maior_menor(pessoa*registro, int quant); // função para comparar o maior e menor dado.
 
 int main(void){
 	
@@ -26,13 +26,14 @@ int main(void){
 	printf("DIGITE A QUANTIDADE DE PESSOAS A SER CADASTRADA\n>> ");
 	scanf("%d",&quant);
 	
-	registro=(pessoa*)malloc(quant*sizeof(pessoa));
+	registro=(pessoa*)malloc(quant*sizeof(pessoa)); // criando um vetor para o registro.
 	if(registro==NULL){
 		printf("!!!ERRO DE MEMORIA!!!");
 	}
 	
 	
 	// registrar dados
+	// laço de repetiçaõ que vai chamar a função.
 	for(cont=0;cont<quant;cont++){
 		registrardados(&registro[cont]);
 	}
@@ -57,7 +58,7 @@ int main(void){
 }
 
 void maior_menor(pessoa*registro, int quant){
-	
+	// criando indices para idantificar quem tem o maior e menor dado.
 	int idade_maior=registro[0].idade;
 	int idade_menor=registro[0].idade;
 	int ind_maior=0;
