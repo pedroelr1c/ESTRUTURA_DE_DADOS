@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Criando uma união para registrar o tipo de produto.
+
 typedef union tipo_p{
 	
 	char alimento;
@@ -8,6 +10,8 @@ typedef union tipo_p{
 	char eletronico;
 	
 }Tipo_p;
+
+// criando uma estrutura para cadastrar os dados de um produto.
 
 typedef struct produto{
 
@@ -22,6 +26,8 @@ int main(void){
 	
 	Produto cadastra;
 	int opc;
+
+	// pedindo para o usuario cadastrar os dados do produto.
 	
 	printf("INFORME NOME DO PRODUTO COMPRADO\n>> ");
 	scanf(" %[^\n]",cadastra.nome);
@@ -32,7 +38,7 @@ int main(void){
 	
 	
 	
-	
+	// imprimindo os dados do produto cadastrado.
 	printf("PRODUTO COMPRADO: %s\n",cadastra.nome);
 	printf("PRECO DO PRODUTO: %.2f\n",cadastra.preco);
 	
