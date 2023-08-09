@@ -11,34 +11,34 @@ typedef struct fruta {
 int main(void){
 
     FILE*fl=fopen("frutas.txt","w");
-    int n=0;
-    char c;
-    int p;
+    int n=1;
+    char p;
+    int c=0;
     Fruta*cadastro;
     do{
-        n+=1;
+        
         cadastro=(Fruta*)malloc(n*sizeof(Fruta));
-        printf("%d\n",n);
+       // printf("%d\n",n);
         printf("INFORME O NOME DA FRUTA:\n>> ");
-        scanf(" %[^\n]",cadastro[c].fruta);
+        scanf(" %[^\n]",cadastro[n].fruta);
         printf("INFORME O PRECO DA FRUTA:\n>> ");
-        scanf("%f",&cadastro[c].preco);
+        scanf("%f",&cadastro[n].preco);
         printf("CADASTRA NOVA FRUTA?\n(S) SIM\n(N)NAO\n");
-        scanf(" %c",&c);
-        cadastro=(Fruta*)realloc(cadastro,n*sizeof(Fruta));
+        scanf(" %c",&p);
+        cadastro=(Fruta*)realloc(cadastro,n+*sizeof(Fruta));
             
         }while(c!='n');
 
         printf("CADASTRO FINALIZADO!\nARQUIVO CRIADO!\n");
 
-    for(p=0;c<n;p++){
+    for(c=0;c<n;c++){
         printf("%d\n",n);
-        printf("nome:%s,%.2f\n",cadastro[p].fruta,cadastro[p].preco);
+        printf("%s,%.2f\n",cadastro[c].fruta,cadastro[c].preco);
 
     }
-    for(p=0;c<n;p++){
+    for(c=0;c<n;c++){
 
-        fprintf(fl,"%s,%.2f\n",cadastro[p].fruta,cadastro[p].preco);
+        fprintf(fl,"%s,%.2f\n",cadastro[c].fruta,cadastro[c].preco);
 
     }
     
