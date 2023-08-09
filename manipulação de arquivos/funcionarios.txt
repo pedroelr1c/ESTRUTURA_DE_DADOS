@@ -1,1 +1,3 @@
-12	pedro	400.0040	duda	300.00
+ID  FUNCIONARIO    SALARIO
+1	duda		40.00
+2	jp		340.00

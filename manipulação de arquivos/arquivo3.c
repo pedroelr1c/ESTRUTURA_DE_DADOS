@@ -42,8 +42,7 @@ int main(void) {
    FILE*fl = fopen("funcionarios.txt", "w");
 
     int n;
-    int c;
-    
+    int c; 
 
     printf("DIGITE O TANO DE FUNCIONARIOS A SER CADASTRADOS\n>> ");
     scanf("%d",&n);
@@ -58,10 +57,8 @@ int main(void) {
     
     imprimir_dados(cadastro,n);
 
-
-
     for(c=0;c<n;c++){
-        fprintf(fl,"%d\t%s\t%.2f",cadastro[c].id,cadastro[c].nome,cadastro[c].salario);
+        fprintf(fl,"%d\t%s\t%.2f\n",cadastro[c].id,cadastro[c].nome,cadastro[c].salario);
 
     }
 
