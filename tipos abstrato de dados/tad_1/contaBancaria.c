@@ -3,6 +3,14 @@
 #include "contaBancaria.h"
 
 
+typedef struct contabancaria{
+    
+    char titular[40];
+    int numero;
+    float saldo;
+ 
+}Conta;
+
 Conta*cad(char titular[40], int numero, float saldo){
     Conta*cad=(Conta*)malloc(sizeof(Conta));
     if(cad==NULL){

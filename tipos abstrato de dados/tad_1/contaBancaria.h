@@ -3,14 +3,6 @@
 #include <string.h>
 
 
-typedef struct contabancaria{
-    
-    char titular[40];
-    int numero;
-    float saldo;
- 
-}Conta;
-
 // função para criar a struct com os dados da conta bancaria.
 Conta*cad(char titular[40], int numero, float saldo);
 
