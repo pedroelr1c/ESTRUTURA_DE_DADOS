@@ -45,15 +45,52 @@ executado (independente do tamanho do input).
 
 int Max(int arr[], int n){
 
-    int i; 
-    int max = arr[0];
-    for(i = 1; i < n; i++){
-        if(arr[i] > max){
-            max = arr[i];
+    int i; // uma vez, c1
+    int max = arr[0]; // uma vez, c2
+    for(i=1; i<n; i++){ // n-1 vezes, onde não temos um valor definido para n é o laço vai ate o valor anterior de n (<), c3.
+        if(arr[i] > max){ // n-1 vezes, c4
+            max = arr[i]; // n-1 vez, c5
         }
     }
-    return max;
+    return max; // uma vex, c6
 }
+/*
+
+t(n)= c1+c2+c3+(n-1)+c4(n-1)+c5(n-1)+c6
+
+t(n)= (c3+c4+c5)(n-1)+c1+c2+c6
+       ~~~~~~~~       ~~~~~~~~ 
+          a              b     
+
+t(n)= a(n-1)+b       
+
+Tipos de compleidade
+
+    - Complexidade linear
+    - Complexidade quadratica
+    - Complexidade exp
+    - Complexidade logaritima
+    
+*/
+
+void insertionSort(int arr[],int n){
+    int i, key, j; // uma vez, c1
+    for(i=1;i<n;i++){ // n-1 vezes, c2 
+        key=arr[i]; // uma vez, c3
+        j=i-1 // uma vez, c4
+        while(j>=0 && arr[j] > key){ // n+1 vezes, c5
+            arr[j+1] = arr[j]; // duas vezes, c6
+            j=j-1; // uma vezes, c7
+        }
+        arr[j+1] = key; // duas vezes, c8
+    }
+}
+/*
+
+t(n)= c1+c2+(n-1)+c3+c4+c5+(n+1)+c6+c7+c8
+
+*/
+
 
 
 
