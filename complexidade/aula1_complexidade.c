@@ -74,31 +74,30 @@ Tipos de compleidade
 */
 
 void insertionSort(int arr[],int n){
-    int i, key, j; // uma vez, c1
-    for(i=1;i<n;i++){ // n-1 vezes, c2 
-        key=arr[i]; // uma vez, c3
-        j=i-1;// uma vez, c4
+    int i, key, j; //  c1
+    for(i=1;i<n;i++){ // n-1  c2 
+        key=arr[i]; // n-1  c3
+        j=i-1;// n-1  c4
         while(j>=0 && arr[j] > key){ // (n²-n)/2 vezes, c5
-            arr[j+1] = arr[j]; // n vezes, c6
-            j=j-1; // n vezes, c7
+            arr[j+1] = arr[j]; // (n²-n)/2 vezes, c6
+            j=j-1; // (n²-n)/2 c7
         }
-        arr[j+1] = key; // uma veze, c8
+        arr[j+1] = key; // n-1 c8
     }
 }
 /*
 
+t(n) c5+c6+c7(n²-n)+c2+c3+c4+c8(n-1)+c1
+     ~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~  ~~
+            a              b         c
 
+a(n²-n)/2 + b(n-1) + c
+
+BIG O(n²)
 
 */
 
-
-
-
-
-int main(void) {
-    
-    
-    
+int main(void) { 
 
     return 0;
 }
