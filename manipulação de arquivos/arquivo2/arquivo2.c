@@ -23,7 +23,7 @@ while(c=fgets(fp)!=EOF){
 }
 
 fclose(fp);
-printf("NUMERO DE LINHAS = %d\n",nlinhas);
+printf("NUMERO DE LINHAS = %d\n",nlinha);
 
 return 0;
 
