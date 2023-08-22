@@ -78,16 +78,16 @@ void insertionSort(int arr[],int n){
     for(i=1;i<n;i++){ // n-1 vezes, c2 
         key=arr[i]; // uma vez, c3
         j=i-1 // uma vez, c4
-        while(j>=0 && arr[j] > key){ // n+1 vezes, c5
-            arr[j+1] = arr[j]; // duas vezes, c6
-            j=j-1; // uma vezes, c7
+        while(j>=0 && arr[j] > key){ // (n²-n)/2 vezes, c5
+            arr[j+1] = arr[j]; // uma veze, c6
+            j=j-1; // uma veze, c7
         }
-        arr[j+1] = key; // duas vezes, c8
+        arr[j+1] = key; // uma veze, c8
     }
 }
 /*
 
-t(n)= c1+c2+(n-1)+c3+c4+c5+(n+1)+c6+c7+c8
+
 
 */
 
