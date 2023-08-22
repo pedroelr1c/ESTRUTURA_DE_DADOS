@@ -77,7 +77,7 @@ void insertionSort(int arr[],int n){
     int i, key, j; // uma vez, c1
     for(i=1;i<n;i++){ // n-1 vezes, c2 
         key=arr[i]; // uma vez, c3
-        j=i-1 // uma vez, c4
+        j=i-1;// uma vez, c4
         while(j>=0 && arr[j] > key){ // (n²-n)/2 vezes, c5
             arr[j+1] = arr[j]; // uma veze, c6
             j=j-1; // uma veze, c7

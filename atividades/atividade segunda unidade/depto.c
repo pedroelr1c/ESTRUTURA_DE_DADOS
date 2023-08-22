@@ -10,7 +10,6 @@ typedef struct funcionario{
 	
 }Funcionario;
 
-
 void copiar_dados(FILE*fl,int n,Funcionario**pessoal);
 
 void imprimir_folha_pagamentos(FILE*fl,int n,Funcionario**pessoal) {
@@ -25,14 +24,7 @@ void imprimir_folha_pagamentos(FILE*fl,int n,Funcionario**pessoal) {
 	//	fprintf(fl,"%d/n%c%d/t%s/t%f",n,pessoal[c]->depto,pessoal[c]->id,pessoal[c]->nome,pessoal[c]->depto,pessoal[c]->salario);
 		
 	}
-	
-	
 }
-	
-	
-	
-
-
 int main(void){
 	
 	
@@ -59,8 +51,7 @@ int main(void){
 		exit(1);
 		
 	}
-	
-	
+
 	copiar_dados(fl,n,pessoal);
 
 	imprimir_folha_pagamentos(fl,n,pessoal);
@@ -69,8 +60,6 @@ int main(void){
 
 	return 0;
 }
-
-
 void copiar_dados(FILE*fl,int n,Funcionario**pessoal){
 	
 	int c;
