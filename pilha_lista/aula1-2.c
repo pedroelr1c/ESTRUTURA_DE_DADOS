@@ -2,8 +2,13 @@
 #include<stdlib.h>
 #include<string.h>
 
-struct  frutas * insare(struct frutas * frutas, char * nome){
-    struct frutas*novafruta=(struct frutas)malloc(sizeof(struct frutas));
+struct frutas{
+    char nome[10]; // Nome da fruta.
+    struct frutas *proxima; // Endereço da proxima fruta.
+};
+
+struct  frutas * insere(struct frutas * fruta, char * nome){
+    struct frutas*novafruta=(struct frutas*)malloc(sizeof(struct frutas));
     strcpy(novafruta->nome, nome);
     novafruta->proxima=fruta;
     return novafruta;
@@ -11,9 +16,9 @@ struct  frutas * insare(struct frutas * frutas, char * nome){
 
 int main(void){
     struct frutas *lista=NULL;
-    lista=insare(lista,"maca");
-    lista=insare(lista,"abacate");
-    lista=insare(lista,"uva");
+    lista=insere(lista,"maca");
+    lista=insere(lista,"abacate");
+    lista=insere(lista,"uva");
     free(lista);
  
 return 0; 
